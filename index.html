@@ -1,0 +1,61 @@
+### Interaction
+
+<form action="https://cosmic.link">
+  
+  <input name="type" type="hidden" value="payment">
+  
+  <fieldset><legend>#network</legend>
+    <select name="network">
+      <option value="test">Testnet</option>
+      <option value="public">Public</option>
+    </select>
+  </fieldset>
+  
+  <fieldset><legend>#memo</legend>
+    <input name="memo" type="text" placeholder="28 characters max" required>
+  </fieldset>
+  
+  <fieldset><legend>#destination</legend>
+    <input name="destination" type="text" placeholder="Public key or federated address" required>
+  </fieldset>
+  
+  <fieldset><legend>#amount</legend>
+    <input name="amount" type="number" min="0" required>
+  </fieldset>
+
+  <fieldset><legend>#submit</legend>
+    <input id="submit" type="submit" value="Submit">
+  </fieldset>
+  
+</form>
+  
+
+### Description
+
+This pen shows how to leverage the CosmicLink format to pass a transfer request from a simple HTML form.
+
+
+### Keypoints
+
+- Because it doesn't need any library, this pen is the lightest transfer form ever made!
+- The HTML form builds a CosmicLink query that is passed to the Cosmic.link website.
+- CosmicLink queries syntax has been derived from `js-stellar-sdk` operations syntax.
+- It is possible to create multi-operation transactions using the syntax `?type=transaction&{...metaFields|txFields}&operation={type1}&{...op1Parameters}...&operation={typeN}&{...opNParameters}`
+- By leveraging the multi-operation syntax and hidden inputs, it is possible to create advanced transaction templates.
+
+### Challenges
+
+- **Easy/** Transform the HTML form into a donation form, that let the user send any amount to an address of your choice.
+- **Hard/** Edit the form into one that let the user open a trustline for a selection of assets.
+
+_Give it a try by editing the code, and be the first to post a solution on GalacticTalk!_
+
+
+### Documentation
+
+- <a href="https://cosmic.plus/#view:js-cosmic-lib/web/doc/tutorial-20-cheatsheet-query.html" target="_blank">CosmicQueries cheatsheet</a>
+- <a href="https://stellar.github.io/js-stellar-sdk/Operation.html" target="_blank">StellarSdk Operations specification</a>
+
+### Social
+
+- [Discuss that pen on GalacticTalk](https://galactictalk.org/d/2122-pen-of-the-week-html-only-transfer-request-form)
